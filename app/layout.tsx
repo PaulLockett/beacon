@@ -12,7 +12,7 @@ import "../styles/text-editor.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Liveblocks Starter Kit",
+  title: "Beacon AI Data Platform",
 };
 
 export default async function RootLayout({
