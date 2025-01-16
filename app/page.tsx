@@ -35,12 +35,10 @@ export default async function Index() {
     <MarketingLayout>
       <Container className={styles.section}>
         <div className={styles.heroInfo}>
-          <h1 className={styles.heroTitle}>
-            Kickstart your collaborative&nbsp;app
-          </h1>
+          <h1 className={styles.heroTitle}>Structure your messy data</h1>
           <p className={styles.heroLead}>
-            Use the Liveblocks Starter Kit to build your document-based
-            collaborative app in&nbsp;minutes.
+            Use Beacon to reshape your messy data and data sources into a format
+            that is easy to understand and use.
           </p>
         </div>
         <div className={styles.heroActions}>
@@ -53,7 +51,7 @@ export default async function Index() {
             <Button icon={<SignInIcon />}>Sign in</Button>
           </form>
           <LinkButton
-            href="https://liveblocks.io/docs/guides/nextjs-starter-kit"
+            href="https://docs.google.com/document/d/1BDNbizKlkALN289GSLoOwn79AaJKYkAVR--Y7owV8jw/edit?tab=t.0#heading=h.jseyoukuisay"
             target="_blank"
             variant="secondary"
           >
@@ -67,55 +65,59 @@ export default async function Index() {
           <Feature
             description={
               <>
-                A collaborative whiteboard app with included share menu,
-                documents listing, users, groups, permissions, and more.
+                Extract data from diverse sources including PDFs, websites,
+                APIs, spreadsheets, videos, and more - no matter how messy or
+                poorly formatted.
               </>
             }
-            title="Liveblocks"
+            title="Universal Data Extraction"
           />
           <Feature
             description={
               <>
-                Best practices followed, using a mixture of SSR and custom API
-                endpoints. Modify documents from both client and server.
+                Transform raw data into structured formats through an iterative
+                process combining AI analysis with human validation and
+                refinement.
               </>
             }
-            title="Next.js"
+            title="Interactive Refinement"
           />
           <Feature
             description={
               <>
-                Adjust our reusable interface & design system to fit your needs.
+                Generate custom data products like reports, documents, and
+                analyses that match your exact needs and specifications.
               </>
             }
-            title="User Interface"
+            title="Flexible Outputs"
           />
           <Feature
             description={
               <>
-                All custom client and server functions are fully typed, and easy
-                to update.
+                Validate data extraction feasibility upfront and continuously
+                monitor quality through built-in auditing tools.
               </>
             }
-            title="TypeScript"
+            title="Quality Assurance"
           />
           <Feature
             description={
               <>
-                Complete authentication, compatible with any NextAuth provider,
-                including GitHub, Google, Auth0, and many more.
+                Process data in real-time as it arrives, allowing for continuous
+                extraction and refinement of your data sources.
               </>
             }
-            title="NextAuth.js"
+            title="Continuous Processing"
           />
           <Feature
             description={
               <>
-                See data update live using the SWR (state-while-revalidate)
-                library.
+                Multiple input methods including natural language, visual
+                annotations, and golden examples to guide the extraction
+                process.
               </>
             }
-            title="SWR"
+            title="Flexible Input Methods"
           />
         </div>
       </Container>
