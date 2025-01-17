@@ -7,7 +7,6 @@ import { SignInIcon } from "@/icons";
 import { MarketingLayout } from "@/layouts/Marketing";
 import { Button, LinkButton } from "@/primitives/Button";
 import { Container } from "@/primitives/Container";
-import styles from "./page.module.css";
 
 interface FeatureProps extends Omit<ComponentProps<"div">, "title"> {
   description: ReactNode;
@@ -16,9 +15,15 @@ interface FeatureProps extends Omit<ComponentProps<"div">, "title"> {
 
 function Feature({ title, description, className, ...props }: FeatureProps) {
   return (
-    <div className={clsx(className, styles.featuresFeature)} {...props}>
-      <h4 className={styles.featuresFeatureTitle}>{title}</h4>
-      <p className={styles.featuresFeatureDescription}>{description}</p>
+    <div
+      className={clsx(
+        className,
+        "p-9 border border-[--color-border] rounded-[--radius]"
+      )}
+      {...props}
+    >
+      <h4 className="mb-4 font-semibold">{title}</h4>
+      <p className="text-sm">{description}</p>
     </div>
   );
 }
@@ -33,15 +38,17 @@ export default async function Index() {
 
   return (
     <MarketingLayout>
-      <Container className={styles.section}>
-        <div className={styles.heroInfo}>
-          <h1 className={styles.heroTitle}>Structure your messy data</h1>
-          <p className={styles.heroLead}>
+      <Container className="my-20">
+        <div className="mb-12">
+          <h1 className="max-w-[400px] mb-9 text-4xl font-extrabold leading-tight">
+            Structure your messy data
+          </h1>
+          <p className="max-w-[460px] text-xl text-[--color-text-lighter]">
             Use Beacon to reshape your messy data and data sources into a format
             that is easy to understand and use.
           </p>
         </div>
-        <div className={styles.heroActions}>
+        <div className="flex gap-6">
           <form
             action={async () => {
               "use server";
@@ -59,9 +66,9 @@ export default async function Index() {
           </LinkButton>
         </div>
       </Container>
-      <Container className={styles.section}>
-        <h2 className={styles.sectionTitle}>Features</h2>
-        <div className={styles.featuresGrid}>
+      <Container className="my-20">
+        <h2 className="mb-10 text-2xl font-bold">Features</h2>
+        <div className="grid gap-10 grid-cols-[repeat(auto-fit,minmax(240px,1fr))]">
           <Feature
             description={
               <>
