@@ -121,7 +121,9 @@ export function Basket() {
     try {
       const formData = new FormData(e.target as HTMLFormElement);
       const data = {
-        urls: urls ? Object.values(urls).map((url) => url.url) : [],
+        urls: urls
+          ? Array.from(urls.values()).map((urlData) => urlData.url)
+          : [],
         goal: formData.get("goal") as string,
         outputFormat: formData.get("outputFormat") as "CSV" | "Excel" | "JSON",
       };
@@ -144,28 +146,29 @@ export function Basket() {
     }
   };
 
-  const hasContent =
-    (files && Object.keys(files).length > 0) ||
-    (urls && Object.keys(urls).length > 0);
+  console.log(files);
+  console.log(urls);
+
+  const hasContent = (files && files.size > 0) || (urls && urls.size > 0);
 
   // Get combined list of files and URLs
   const items = [
     ...(files
-      ? Object.entries(files).map(([id, file]) => ({
+      ? Array.from(files.entries()).map(([id, fileData]) => ({
           id,
           type: "file" as const,
-          name: file.name,
-          info: `${(file.size / 1024 / 1024).toFixed(2)} MB`,
-          data: file,
+          name: fileData.name,
+          info: `${(fileData.size / 1024 / 1024).toFixed(2)} MB`,
+          data: fileData,
         }))
       : []),
     ...(urls
-      ? Object.entries(urls).map(([id, url]) => ({
+      ? Array.from(urls.entries()).map(([id, urlData]) => ({
           id,
           type: "url" as const,
-          name: url.url,
-          info: `Added ${new Date(url.addedAt).toLocaleString()}`,
-          data: url,
+          name: urlData.url,
+          info: `Added ${new Date(urlData.addedAt).toLocaleString()}`,
+          data: urlData,
         }))
       : []),
   ].sort((a, b) => a.name.localeCompare(b.name));
