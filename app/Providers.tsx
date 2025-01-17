@@ -6,6 +6,7 @@ import Router from "next/router";
 import { Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
 import { ReactNode } from "react";
+import { Toaster } from "@/components/ui/toaster";
 import { DOCUMENT_URL } from "@/constants";
 import { authorizeLiveblocks, getSpecificDocuments } from "@/lib/actions";
 import { getUsers } from "@/lib/database";
@@ -65,7 +66,10 @@ export function Providers({
           }));
         }}
       >
-        <TooltipProvider>{children}</TooltipProvider>
+        <TooltipProvider>
+          {children}
+          <Toaster />
+        </TooltipProvider>
       </LiveblocksProvider>
     </SessionProvider>
   );

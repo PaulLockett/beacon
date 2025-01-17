@@ -76,15 +76,39 @@ function WhiteboardDocumentIcon(props: ComponentProps<"svg">) {
   );
 }
 
+function BasketDocumentIcon(props: ComponentProps<"svg">) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={20}
+      height={20}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M2 3h20l-2 19H4L2 3Z" />
+      <path d="M7 3v4" />
+      <path d="M17 3v4" />
+      <path d="M2 7h20" />
+    </svg>
+  );
+}
+
 export function DocumentIcon({ type, ...props }: Props) {
   switch (type) {
     case "text":
       return <TextDocumentIcon {...props} />;
-    case "canvas":
-      return <CanvasDocumentIcon {...props} />;
     case "whiteboard":
       return <WhiteboardDocumentIcon {...props} />;
+    case "canvas":
+      return <CanvasDocumentIcon {...props} />;
+    case "basket":
+      return <BasketDocumentIcon {...props} />;
     default:
-      return null;
+      return <TextDocumentIcon {...props} />;
   }
 }

@@ -76,6 +76,16 @@ export function DocumentCreatePopover({
           >
             Canvas
           </Button>
+          <Button
+            icon={<PlusIcon />}
+            onClick={() => {
+              createNewDocument("Untitled", "basket");
+            }}
+            variant="subtle"
+            disabled={disableButtons}
+          >
+            Basket
+          </Button>
         </div>
       }
       modal
