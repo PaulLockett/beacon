@@ -6,3 +6,4 @@ export * from "./getDocumentAccess";
 export * from "./getDraftsGroupName";
 export * from "./isUserDocumentOwner";
 export * from "./userAllowedInRooms";
+export * from "./cn";
