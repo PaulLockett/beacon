@@ -1,6 +1,6 @@
 "use client";
 
-import { LiveObject } from "@liveblocks/client";
+import { LiveMap, LiveObject } from "@liveblocks/client";
 import { useMutation, useSelf, useStorage } from "@liveblocks/react";
 import { FileIcon, GlobeIcon } from "lucide-react";
 import { useCallback, useState } from "react";
@@ -33,15 +33,18 @@ export function Basket() {
   // Add a file to the storage
   const addFile = useMutation(({ storage }, file: File) => {
     if (!storage.get("files")) {
-      storage.set("files", new LiveObject({}));
+      storage.set("files", new LiveMap());
     }
     const files = storage.get("files");
-    files.set(file.name, {
-      name: file.name,
-      type: file.type,
-      size: file.size,
-      lastModified: file.lastModified,
-    });
+    files.set(
+      file.name,
+      new LiveObject({
+        name: file.name,
+        type: file.type,
+        size: file.size,
+        lastModified: file.lastModified,
+      })
+    );
   }, []);
 
   // Remove a file from storage
@@ -55,14 +58,17 @@ export function Basket() {
   // Add a URL to the storage
   const addUrl = useMutation(({ storage }, url: string) => {
     if (!storage.get("urls")) {
-      storage.set("urls", new LiveObject({}));
+      storage.set("urls", new LiveMap());
     }
     const urls = storage.get("urls");
     const urlId = new Date().getTime().toString();
-    urls.set(urlId, {
-      url,
-      addedAt: new Date().toISOString(),
-    });
+    urls.set(
+      urlId,
+      new LiveObject({
+        url,
+        addedAt: new Date().toISOString(),
+      })
+    );
   }, []);
 
   // Remove a URL from storage

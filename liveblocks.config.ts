@@ -11,6 +11,24 @@ export type Note = LiveObject<{
 
 export type Notes = LiveMap<string, Note>;
 
+export type Files = LiveMap<
+  string,
+  LiveObject<{
+    name: string;
+    type: string;
+    size: number;
+    lastModified: number;
+  }>
+>;
+
+export type Urls = LiveMap<
+  string,
+  LiveObject<{
+    url: string;
+    addedAt: string;
+  }>
+>;
+
 declare global {
   interface Liveblocks {
     // Each user's Presence, for useMyPresence, useOthers, etc.
@@ -22,6 +40,8 @@ declare global {
     Storage: {
       notes: Notes; // Whiteboard
       records: LiveMap<string, any>; // Canvas
+      files: Files; // Basket
+      urls: Urls; // Basket
     };
     // Custom user info set when authenticating with a secret key
     UserMeta: {
@@ -55,5 +75,7 @@ export function createInitialStorage(): Liveblocks["Storage"] {
   return {
     notes: new LiveMap(), // Whiteboard
     records: new LiveMap(), // Canvas
+    files: new LiveMap(), // Basket
+    urls: new LiveMap(), // Basket
   };
 }
