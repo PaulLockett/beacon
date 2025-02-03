@@ -1,8 +1,9 @@
 # dependencies
-/node_modules
+node_modules
+**/node_modules
 
 # next.js
-/.next
+**/.next
 /out
 
 # production
@@ -18,14 +19,16 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+**/.env.local
+**/.env.development.local
+**/.env.test.local
+**/.env.production.local
 .idea
+
 
 # typescript
 *.tsbuildinfo
 # Turborepo
 .turbo
 .vercel
+.env*.local

@@ -1,4 +1,4 @@
-import { User } from "./types";
+import { User } from ".";
 
 declare module "next-auth" {
   /**

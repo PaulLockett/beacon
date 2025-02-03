@@ -1,9 +1,9 @@
 "use client";
 
+import { Session } from "@auth/core/types";
 import { LiveblocksProvider } from "@liveblocks/react/suspense";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
 import Router from "next/router";
-import { Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
 import { ReactNode } from "react";
 import { Toaster } from "@/components/ui/toaster";
@@ -16,7 +16,7 @@ export function Providers({
   session,
 }: {
   children: ReactNode;
-  session: Session | null;
+  session: Session | null | undefined;
 }) {
   return (
     <SessionProvider session={session}>
