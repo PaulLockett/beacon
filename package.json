@@ -2,10 +2,10 @@
     "name": "beacon-app",
     "private": true,
     "scripts": {
-        "build": "turbo build --filter=web",
-        "dev": "turbo dev --filter=web --env-mode=loose",
-        "start": "turbo start --filter=web",
-        "temporal:dev": "turbo dev --filter=temporal-worker --env-mode=loose"
+        "build": "turbo build",
+        "dev": "turbo dev",
+        "lint": "turbo lint",
+        "format": "prettier --write \"**/*.{ts,tsx,md}\""
     },
-    "packageManager": "pnpm@9.9.0+sha256.7a4261e50d9a44d9240baf6c9d6e10089dcf0a79d0007f2a26985a6927324177"
+    "packageManager": "pnpm@9.0.0"
 }

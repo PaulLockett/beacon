@@ -9,6 +9,15 @@ node_modules
 # production
 /build
 
+# Build Outputs
+.next/
+out/
+build
+dist
+
+# Testing
+coverage
+
 # misc
 .DS_Store
 *.pem
