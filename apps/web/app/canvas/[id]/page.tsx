@@ -1,5 +1,5 @@
-import { CanvasDocumentView } from "./CanvasDocumentView";
 import { getDocument } from "@/lib/actions";
+import { CanvasDocumentView } from "./CanvasDocumentView";
 
 export default async function Canvas({
   params: { id },

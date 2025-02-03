@@ -20,6 +20,13 @@ module.exports = {
     "unused-imports",
     "prettier",
   ],
+  settings: {
+    "import/resolver": {
+      typescript: {
+        project: ["apps/*/tsconfig.json"],
+      },
+    },
+  },
   rules: {
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/ban-types": "off",
