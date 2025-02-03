@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "lib": ["dom", "esnext"],
+    "lib": [
+      "dom",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -15,9 +18,16 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/*": ["./src/*", "./*"],
-      "~/*": ["./*"],
-      "@shared/*": ["../shared/*"]
+      "@/*": [
+        "./src/*",
+        "./*"
+      ],
+      "~/*": [
+        "./*"
+      ],
+      "@shared/*": [
+        "../shared/*"
+      ]
     },
     "plugins": [
       {
@@ -33,5 +43,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
